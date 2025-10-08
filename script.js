@@ -2,7 +2,7 @@ const canvas = document.getElementById("starfield");
 const ctx = canvas.getContext("2d");
 
 let stars = [];
-const numStars = 250;
+const numStars = 350;
 const speed = 0.15;
 
 // ----- Resize -----
@@ -19,9 +19,9 @@ function initStars() {
   for (let i = 0; i < numStars; i++) {
     const rand = Math.random();
     let color;
-    if (rand < 0.6) color = "white";        // main-sequence white
-    else if (rand < 0.8) color = "#aeeaff"; // bluish
-    else color = "#ffd6a5";                 // yellowish
+    if (rand < 0.6) color = "white";        //  white
+    else if (rand < 0.8) color = "8ae1ff"; // blue
+    else color = "#ffcd91";                 // yellow
 
     stars.push({
       x: Math.random() * canvas.width - canvas.width / 2,
