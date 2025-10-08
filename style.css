@@ -41,16 +41,16 @@ h1 {
 
 .subtitle {
   font-size: 1rem;
-  color: #967bb6;
+  color: #c2a8ff;
   margin-bottom: 2rem;
 }
 
 /* ===== Acknowledgements ===== */
 .acknowledgements h2 {
   font-size: 1.4rem;
-  color: #967bb6;
+  color: #c2a8ff;
   margin-bottom: 1rem;
-  border-bottom: 1px solid #45a29e;
+  border-bottom: 1px solid #967bb6;
   display: inline-block;
   padding-bottom: 0.3rem;
 }
@@ -82,7 +82,7 @@ footer {
 }
 
 footer a {
-  color: #967bb6;
+  color: #c2a8ff;
   text-decoration: none;
 }
 
