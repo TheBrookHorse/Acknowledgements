@@ -7,8 +7,8 @@ const canvas = document.getElementById("starfield");
 const ctx = canvas.getContext("2d");
 
 let stars = [];
-const numStars = 150;  // number of stars
-const speed = 0.2;
+const numStars = 200; // a bit denser for visibility
+const speed = 0.15;
 
 function resize() {
   canvas.width = window.innerWidth;
@@ -29,7 +29,8 @@ function initStars() {
 }
 
 function drawStars() {
-  ctx.fillStyle = "black";
+  // Clear background
+  ctx.fillStyle = "rgba(11, 12, 16, 1)"; // matches your dark theme
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
   for (let star of stars) {
@@ -46,9 +47,11 @@ function drawStars() {
 
     if (px >= 0 && px <= canvas.width && py >= 0 && py <= canvas.height) {
       const size = (1 - star.z / canvas.width) * 2;
-      const alpha = 1 - star.z / canvas.width;
-      ctx.fillStyle = `rgba(255, 255, 255, ${alpha})`;
-      ctx.fillRect(px, py, size, size);
+      const alpha = 0.8 * (1 - star.z / canvas.width);
+      ctx.fillStyle = `rgba(255, 255, 255, ${alpha})`; // bright white stars
+      ctx.beginPath();
+      ctx.arc(px, py, size, 0, Math.PI * 2);
+      ctx.fill();
     }
   }
 
