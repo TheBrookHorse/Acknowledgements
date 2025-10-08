@@ -35,20 +35,20 @@ body {
 /* ===== Header ===== */
 h1 {
   font-size: 1.8rem;
-  color: #66fcf1;
+  color: #c2a8ff;
   margin-bottom: 0.5rem;
 }
 
 .subtitle {
   font-size: 1rem;
-  color: #45a29e;
+  color: #967bb6;
   margin-bottom: 2rem;
 }
 
 /* ===== Acknowledgements ===== */
 .acknowledgements h2 {
   font-size: 1.4rem;
-  color: #66fcf1;
+  color: #967bb6;
   margin-bottom: 1rem;
   border-bottom: 1px solid #45a29e;
   display: inline-block;
@@ -71,7 +71,7 @@ h1 {
 }
 
 .acknowledgements a:hover {
-  color: #66fcf1;
+  color: #c2a8ff;
 }
 
 /* ===== Footer ===== */
@@ -82,7 +82,7 @@ footer {
 }
 
 footer a {
-  color: #45a29e;
+  color: #967bb6;
   text-decoration: none;
 }
 
