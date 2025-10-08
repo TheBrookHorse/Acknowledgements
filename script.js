@@ -7,7 +7,7 @@ const canvas = document.getElementById("starfield");
 const ctx = canvas.getContext("2d");
 
 let stars = [];
-const numStars = 200; // a bit denser for visibility
+const numStars = 999999; // a bit denser for visibility
 const speed = 0.15;
 
 function resize() {
