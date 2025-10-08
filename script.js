@@ -1,15 +1,13 @@
 // ===== Fade-In Animation =====
-document.addEventListener("DOMContentLoaded", () => {
-  const fadeElems = document.querySelectorAll(".fade-in");
-  fadeElems.forEach(elem => elem.classList.add("visible"));
-});
+const fadeElems = document.querySelectorAll(".fade-in");
+fadeElems.forEach(elem => elem.classList.add("visible"));
 
 // ===== Starfield Animation =====
 const canvas = document.getElementById("starfield");
 const ctx = canvas.getContext("2d");
 
 let stars = [];
-const numStars = 150; // number of stars
+const numStars = 150;  // number of stars
 const speed = 0.2;
 
 function resize() {
@@ -34,7 +32,6 @@ function drawStars() {
   ctx.fillStyle = "black";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-  ctx.fillStyle = "white";
   for (let star of stars) {
     star.z -= speed;
     if (star.z <= 0) {
