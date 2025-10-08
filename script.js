@@ -2,7 +2,7 @@ const canvas = document.getElementById("starfield");
 const ctx = canvas.getContext("2d");
 
 let stars = [];
-const numStars = 200;
+const numStars = 250;
 const speed = 0.15;
 
 // ----- Resize -----
@@ -17,10 +17,17 @@ resize();
 function initStars() {
   stars = [];
   for (let i = 0; i < numStars; i++) {
+    const rand = Math.random();
+    let color;
+    if (rand < 0.6) color = "white";        // main-sequence white
+    else if (rand < 0.8) color = "#aeeaff"; // bluish
+    else color = "#ffd6a5";                 // yellowish
+
     stars.push({
       x: Math.random() * canvas.width - canvas.width / 2,
       y: Math.random() * canvas.height - canvas.height / 2,
-      z: Math.random() * canvas.width
+      z: Math.random() * canvas.width,
+      color
     });
   }
 }
@@ -41,7 +48,10 @@ function draw() {
 
     if (px >= 0 && px <= canvas.width && py >= 0 && py <= canvas.height) {
       const size = 2 * (1 - star.z / canvas.width);
-      ctx.fillStyle = "white";
+      ctx.fillStyle = star.color;
+      ctx.globalAlpha = 0.8 + Math.random() * 0.2; // subtle twinkle
+      ctx.fillRect(px, py, size, size);
+      ctx.globalAlpha = 1; // reset
       ctx.fillRect(px, py, size, size);
     }
   }
